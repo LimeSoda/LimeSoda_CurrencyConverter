@@ -1,13 +1,15 @@
 # LimeSoda CurrencyConverter
 
 Prices are converted by using the Euro foreign exchange rates provided by the European Central Bank (ECB)
-http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
+see: http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
+
+This version includes manual updates for currencies.
 
 > The reference rates are usually updated by 3 p.m. C.E.T. They are based on a regular daily concertation procedure between central banks across Europe and worldwide, which normally takes place at 2.15 p.m. CET. 
 
 Features
 -------------
-## Cross Rates
+### Cross Rates
 LimeSoda_CurrencyConverter enables the price conversion between different currencies, provided by the ECB service.
 
 Information
