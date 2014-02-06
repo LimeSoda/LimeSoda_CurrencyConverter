@@ -9,6 +9,7 @@ class LimeSoda_CurrencyConverter_Model_Ecb extends Mage_Directory_Model_Currency
 		$xml = simplexml_load_file("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
 
 		try {
+			//store rates in array to provide cross-rates
 			$this -> _rates["EUR"] = 1;
 			foreach ($xml->Cube->Cube->Cube as $rate) {
 				$this -> _rates[(string)$rate["currency"]] = floatval($rate["rate"]);
@@ -18,7 +19,7 @@ class LimeSoda_CurrencyConverter_Model_Ecb extends Mage_Directory_Model_Currency
 				$this -> _messages[] = Mage::helper('directory') -> __('Cannot retrieve rate from %s.', $this -> _url);
 				return null;
 			}
-			return (float)1 / $this -> _rates[$currencyFrom] * $this -> _rates[$currencyTo];
+			return (float) 1 / $this -> _rates[$currencyFrom] * $this -> _rates[$currencyTo];
 		} catch (Exception $e) {
 			$this -> _messages[] = Mage::helper('directory') -> __('Cannot retrieve rate from %s.', $this -> _url);
 		}

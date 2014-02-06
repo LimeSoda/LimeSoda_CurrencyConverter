@@ -2,13 +2,13 @@
 
 <config>
     <modules>
-        <LimeSoda_CurrencyConvert>
+        <LimeSoda_CurrencyConverter>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
             	<Mage_Directory />
             	<Mage_Adminhtml />
             </depends>
-        </LimeSoda_CurrencyConvert>
+        </LimeSoda_CurrencyConverter>
     </modules>
 </config>
