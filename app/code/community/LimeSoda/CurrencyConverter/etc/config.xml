@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <LimeSoda_CurrencyConverter>
+            <version>0.0.1</version>
+        </LimeSoda_CurrencyConverter>
+    </modules>
+	<global>
+		<currency>
+            <import>
+                <services>
+                    <ls_ecb>
+                        <name>ECB</name>
+                        <model>LimeSoda_CurrencyConverter_Model_Ecb</model>
+                    </ls_ecb>
+                </services>
+            </import>
+        </currency>
+		<models>
+            <ls_currencyconverter>
+                <class>LimeSoda_CurrencyConverter_Model</class>
+            </ls_currencyconverter>
+        </models>
+	</global>
+</config>
