@@ -16,7 +16,7 @@ Information
 
 Compatibility
 -------------
-- Magento >= 1.8.0.0 (may also work in other versions, was only tested in this version yet)
+- Magento 1.8.0.0 (may also work in other versions, was only tested in this version yet)
 
 Installation Instructions
 -------------------------
@@ -24,9 +24,9 @@ Installation Instructions
 
 Developer
 ---------
-LimeSoda 
-[http://www.limesoda.com](http://www.limesoda.com)  
-[@LimeSoda_At](https://twitter.com/LimeSoda_at)
+* LimeSoda
+* [http://www.limesoda.com](http://www.limesoda.com)  
+* [@LimeSoda_at](https://twitter.com/LimeSoda_at)
 
 Licence
 -------
