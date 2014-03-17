@@ -20,9 +20,9 @@ Compatibility
 -------------
 LimeSoda_CurrencyConverter has been tested with the following Magento versions:
 - Magento Community Edition 1.5.1.0
-- MagentoCommunity Edition 1.6.2.0
-- MagentoCommunity Edition 1.7.0.2
-- MagentoCommunity Edition 1.8.0.0
+- Magento Community Edition 1.6.2.0
+- Magento Community Edition 1.7.0.2
+- Magento Community Edition 1.8.0.0
 
 Installation Instructions
 -------------------------
