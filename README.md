@@ -30,7 +30,7 @@ Installation Instructions
 
 Developer
 ---------
-* LimeSoda
+* Anna Völkl (@rescueAnn) / LimeSoda
 * [http://www.limesoda.com](http://www.limesoda.com)  
 * [@LimeSoda_at](https://twitter.com/LimeSoda_at)
 
