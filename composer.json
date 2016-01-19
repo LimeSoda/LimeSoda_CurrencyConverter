@@ -1,0 +1,11 @@
+{
+    "name": "limesoda/currency-converter",
+    "type": "magento-module",
+    "license":"OSL-3.0",
+    "description":"LimeSoda_CurrencyConverter enables the price conversion between different currencies, provided by the ECB service.",
+    "authors":[
+        {
+            "name":"Anna Völkl"
+        }
+    ]
+}
