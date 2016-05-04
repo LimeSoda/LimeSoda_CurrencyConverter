@@ -29,6 +29,17 @@ Installation Instructions
 -------------------------
 1. Adjust your PHP settings: allow_url_fopen must be enabled `allow_url_fopen = On`
 
+Usage
+-----
+
+Navigate to System > Manage Currency > Rates
+
+![LimeSoda_CurrencyConverter](https://raw.githubusercontent.com/LimeSoda/LimeSoda_CurrencyConverter/master/limesoda-ecb-currency-rates-menu.jpg)
+
+Select ECB as the Import Service, run the import and click the "Save Currency Rates" button.
+
+![LimeSoda ECB Currency Rates](https://raw.githubusercontent.com/LimeSoda/LimeSoda_CurrencyConverter/master/limesoda-ecb-currency-rates-import.jpg)
+
 Developer
 ---------
 * Anna Völkl (@rescueAnn) / LimeSoda
