@@ -1,28 +1,81 @@
 <?php
 
-class LimeSoda_CurrencyConverter_Model_Ecb extends Mage_Directory_Model_Currency_Import_Abstract {
-	protected $_url = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
+class LimeSoda_CurrencyConverter_Model_Ecb extends Mage_Directory_Model_Currency_Import_Abstract
+{
+    /**
+     * @var string
+     */
+	protected $_url = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
+
+    /**
+     * @var array
+     */
 	protected $_messages = array();
+
+    /**
+     * @var array
+     */
 	protected $_rates = array();
 
-	protected function _convert($currencyFrom, $currencyTo, $retry = 0) {
-		$xml = simplexml_load_file("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
+    /**
+     * HTTP client
+     *
+     * @var Varien_Http_Client
+     */
+    protected $_httpClient;
 
-		try {
-			//store rates in array to provide cross-rates
-			$this -> _rates["EUR"] = 1;
-			foreach ($xml->Cube->Cube->Cube as $rate) {
-				$this -> _rates[(string)$rate["currency"]] = floatval($rate["rate"]);
-			}
+    public function __construct()
+    {
+        $this->_httpClient = new Varien_Http_Client();
+    }
 
-			if (!$xml) {
-				$this -> _messages[] = Mage::helper('directory') -> __('Cannot retrieve rate from %s.', $this -> _url);
-				return null;
-			}
-			return (float) 1 / $this -> _rates[$currencyFrom] * $this -> _rates[$currencyTo];
-		} catch (Exception $e) {
-			$this -> _messages[] = Mage::helper('directory') -> __('Cannot retrieve rate from %s.', $this -> _url);
-		}
+    /**
+     * @param int $retry
+     * @return null|SimpleXMLElement
+     */
+    protected function _fetchRatesFromService($retry = 0)
+    {
+        $xml = null;
+
+        try {
+            $response = $this->_httpClient
+                ->setUri($this->_url)
+                ->setConfig(array('timeout' => Mage::getStoreConfig('currency/webservicex/timeout')))
+                ->request('GET')
+                ->getBody();
+
+            $xml = simplexml_load_string($response, null, LIBXML_NOERROR);
+        }
+        catch (Exception $e) {
+            if( $retry == 0 ) {
+                $this->_fetchRates(1);
+            }
+        }
+
+        return $xml;
+    }
+
+    /**
+     * @param string $currencyFrom
+     * @param string $currencyTo
+     * @param int $retry
+     * @return float|void
+     */
+	protected function _convert($currencyFrom, $currencyTo, $retry = 0)
+    {
+        $xml = $this->_fetchRatesFromService($retry);
+
+        if (!$xml) {
+            $this->_messages[] = Mage::helper('directory')->__('Cannot retrieve rate from %s.', $this->_url);
+            return;
+        }
+
+        $this->_rates['EUR'] = 1;
+
+        foreach ($xml->Cube->Cube->Cube as $rate) {
+            $this->_rates[(string) $rate['currency']] = floatval($rate['rate']);
+        }
+
+        return (float) 1 / $this->_rates[$currencyFrom] * $this->_rates[$currencyTo];
 	}
-
 }

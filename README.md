@@ -25,10 +25,6 @@ LimeSoda_CurrencyConverter has been tested with the following Magento versions:
 - Magento Community Edition 1.8.0.0
 - Magento Community Edition 1.9.0.1
 
-Installation Instructions
--------------------------
-1. Adjust your PHP settings: allow_url_fopen must be enabled `allow_url_fopen = On`
-
 Developer
 ---------
 * Anna Völkl (@rescueAnn) / LimeSoda
