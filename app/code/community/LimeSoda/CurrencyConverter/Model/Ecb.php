@@ -38,16 +38,17 @@ class LimeSoda_CurrencyConverter_Model_Ecb extends Mage_Directory_Model_Currency
         $xml = null;
 
         try {
+            $timeout = Mage::getStoreConfig('currency/ls_currencyconverter/timeout');
             $response = $this->_httpClient
                 ->setUri($this->_url)
-                ->setConfig(array('timeout' => Mage::getStoreConfig('currency/webservicex/timeout')))
+                ->setConfig(array('timeout' => $timeout))
                 ->request('GET')
                 ->getBody();
 
             $xml = simplexml_load_string($response, null, LIBXML_NOERROR);
         }
         catch (Exception $e) {
-            if( $retry == 0 ) {
+            if ($retry == 0) {
                 $this->_fetchRates(1);
             }
         }
