@@ -10,11 +10,12 @@ This version includes manual updates for currencies.
 Features
 -------------
 ### Cross Rates
-LimeSoda_CurrencyConverter enables the price conversion between different currencies, provided by the ECB service.
+LimeSoda_CurrencyConverter enables the price conversion between different currencies, provided by the ECB or Yahoo.
 
 Information
 -------------
 * http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
+
 
 Configuration
 -------------
@@ -36,7 +37,7 @@ Navigate to System > Manage Currency > Rates
 
 ![LimeSoda_CurrencyConverter](https://raw.githubusercontent.com/LimeSoda/LimeSoda_CurrencyConverter/master/limesoda-ecb-currency-rates-menu.jpg)
 
-Select ECB as the Import Service, run the import and click the "Save Currency Rates" button.
+Select ECB or Yahoo as the Import Service, run the import and click the "Save Currency Rates" button.
 
 ![LimeSoda ECB Currency Rates](https://raw.githubusercontent.com/LimeSoda/LimeSoda_CurrencyConverter/master/limesoda-ecb-currency-rates-import.jpg)
 
@@ -52,4 +53,4 @@ Licence
 
 Copyright
 ---------
-(c) 2014 LimeSoda Interactive Marketing GmbH
+(c) 2016 LimeSoda Interactive Marketing GmbH
