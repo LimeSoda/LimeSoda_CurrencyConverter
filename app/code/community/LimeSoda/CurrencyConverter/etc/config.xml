@@ -14,6 +14,10 @@
                         <name>ECB</name>
                         <model>LimeSoda_CurrencyConverter_Model_Ecb</model>
                     </ls_ecb>
+                    <ls_yahoo>
+                        <name>Yahoo</name>
+                        <model>LimeSoda_CurrencyConverter_Model_Yahoo</model>
+                    </ls_yahoo>
                 </services>
             </import>
         </currency>
