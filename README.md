@@ -16,6 +16,10 @@ Information
 -------------
 * http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
 
+Configuration
+-------------
+Settings for the module can be found under Configuration > General > Currency Setup > LimeSoda Currency Converter
+
 Compatibility
 -------------
 LimeSoda_CurrencyConverter has been tested with the following Magento versions:
@@ -24,10 +28,6 @@ LimeSoda_CurrencyConverter has been tested with the following Magento versions:
 - Magento Community Edition 1.7.0.2
 - Magento Community Edition 1.8.0.0
 - Magento Community Edition 1.9.0.1
-
-Installation Instructions
--------------------------
-1. Adjust your PHP settings: allow_url_fopen must be enabled `allow_url_fopen = On`
 
 Usage
 -----
