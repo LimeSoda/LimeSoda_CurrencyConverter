@@ -19,7 +19,7 @@ class LimeSoda_CurrencyConverter_Model_Yahoo extends Mage_Directory_Model_Curren
     protected $_httpClient;
 
     /**
-     * @var null|SimpleXMLElement
+     * @var null|Varien_Simplexml_Element
      */
     protected $apiXmlDocument = null;
 
@@ -60,7 +60,7 @@ class LimeSoda_CurrencyConverter_Model_Yahoo extends Mage_Directory_Model_Curren
                 $this->_messages[] = Mage::helper('directory')->__('Cannot retrieve rate from %s.', $url);
                 return null;
             }
-            $this->apiXmlDocument = $xml;
+            $this->apiXmlDocument = new Varien_Simplexml_Element($xml->asXML());
         }
         catch (Exception $e) {
             $this->_messages[] = Mage::helper('directory')->__('Cannot retrieve rate from %s.', $url);
@@ -108,24 +108,11 @@ class LimeSoda_CurrencyConverter_Model_Yahoo extends Mage_Directory_Model_Curren
     protected function _convert($currencyFrom, $currencyTo)
     {
         $pairString = $this->getCurrencyPairString($currencyFrom, $currencyTo);
-
-        /** @var SimpleXMLElement $rate */
-        foreach ($this->apiXmlDocument->xpath('results/rate') as $rate) {
-            if ($this->getNodeAttribute($rate, 'id') == $pairString) {
-                return (string)$rate->Rate[0];
+        /** @var Varien_Simplexml_Element $rate */
+        foreach ($this->apiXmlDocument->descend('results/rate') as $rate) {
+            if ($rate->getAttribute('id') == $pairString) {
+                return (string)$rate->descend('Rate');
             }
-        }
-    }
-
-    /**
-     * @param SimpleXMLElement $node
-     * @param $attributeKey
-     * @return string
-     */
-    protected function getNodeAttribute(SimpleXMLElement $node, $attributeKey)
-    {
-        foreach ($node->attributes() as $key => $value) {
-            if ($key == $attributeKey) return (string)$value;
         }
     }
 }
