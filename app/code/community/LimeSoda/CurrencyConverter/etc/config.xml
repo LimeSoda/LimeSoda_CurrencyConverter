@@ -23,4 +23,11 @@
             </ls_currencyconverter>
         </models>
 	</global>
+    <default>
+        <currency>
+            <ls_currencyconverter>
+                <timeout>100</timeout>
+            </ls_currencyconverter>
+        </currency>
+    </default>
 </config>
