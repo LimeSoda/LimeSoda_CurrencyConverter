@@ -7,6 +7,9 @@ This version includes manual updates for currencies.
 
 > The reference rates are usually updated by 3 p.m. C.E.T. They are based on a regular daily concertation procedure between central banks across Europe and worldwide, which normally takes place at 2.15 p.m. CET. 
 
+Please note:
+> As of 1 July 2016 the reference rates will be updated at around 16:00 CET.
+
 Features
 -------------
 ### Cross Rates
