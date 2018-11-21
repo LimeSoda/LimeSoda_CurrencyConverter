@@ -49,7 +49,7 @@ class LimeSoda_CurrencyConverter_Model_Ecb extends Mage_Directory_Model_Currency
         }
         catch (Exception $e) {
             if ($retry == 0) {
-                $this->_fetchRates(1);
+                $this->_fetchRatesFromService(1);
             }
         }
 
