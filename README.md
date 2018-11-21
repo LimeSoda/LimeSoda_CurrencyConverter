@@ -19,7 +19,6 @@ Information
 -------------
 * http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
 
-
 Configuration
 -------------
 Settings for the module can be found under Configuration > General > Currency Setup > LimeSoda Currency Converter
@@ -44,16 +43,10 @@ Select ECB or Yahoo as the Import Service, run the import and click the "Save Cu
 
 ![LimeSoda ECB Currency Rates](https://raw.githubusercontent.com/LimeSoda/LimeSoda_CurrencyConverter/master/limesoda-ecb-currency-rates-import.jpg)
 
-Developer
----------
-* Anna Völkl (@rescueAnn) / LimeSoda
-* [http://www.limesoda.com](http://www.limesoda.com)  
-* [@LimeSoda_at](https://twitter.com/LimeSoda_at)
-
 Licence
 -------
 [OSL - Open Software Licence 3.0](http://opensource.org/licenses/osl-3.0.php)
 
 Copyright
 ---------
-(c) 2016 LimeSoda Interactive Marketing GmbH
+(c) 2016-2018 LimeSoda Interactive Marketing GmbH
